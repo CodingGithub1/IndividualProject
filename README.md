@@ -1,6 +1,6 @@
 # BULLSEYE BANANZA
 
-## Description:
+## Description: 
 ## Project Objective:
 ## UI and Logic Planning: 
 #### Class Diagram
