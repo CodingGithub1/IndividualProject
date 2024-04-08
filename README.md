@@ -11,4 +11,6 @@
 ![Class Diagram](https://github.com/CodingGithub1/IndividualProject/blob/main/images/BullseyeBonanza.drawio.png)
 #### GUI Mockup
 ![GUI Mockups](https://github.com/CodingGithub1/IndividualProject/blob/main/images/GUIMOCKUP.png)
+#### Start Screen
+![Start Screen](https://github.com/CodingGithub1/IndividualProject/blob/main/images/StartScreen.png)
 
