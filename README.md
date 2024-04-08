@@ -10,5 +10,5 @@
 #### Class Diagram
 ![Class Diagram](https://github.com/CodingGithub1/IndividualProject/blob/main/images/BullseyeBonanza.drawio.png)
 #### GUI Mockup
-![GUI Mockups](https://github.com/CodingGithub1/IndividualProject/blob/main/images/GUI%20MOCKUP%20BullsEYE%20BANANZA-1.png)
+![GUI Mockups](https://github.com/CodingGithub1/IndividualProject/blob/main/images/GUIMOCKUPBullsEYEBANANZA-1.png)
 
