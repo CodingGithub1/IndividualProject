@@ -13,4 +13,5 @@
 ![GUI Mockups](https://github.com/CodingGithub1/IndividualProject/blob/main/images/GUIMOCKUP.png)
 #### Start Screen
 ![Start Screen](https://github.com/CodingGithub1/IndividualProject/blob/main/images/StartScreen.png)
-
+#### Background
+![Background](https://github.com/CodingGithub1/IndividualProject/blob/main/images/Background.png)
