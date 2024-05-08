@@ -6,7 +6,8 @@ PImage appScreen;
 int score;
 boolean play;
 // Draw all shapes
-Shape[] shapes = new Shape[3];
+int maxShapes = 10;
+Shape[] shapes; //Declare the shapes array
 
 void setup() {
   size(1500, 1000);
@@ -14,10 +15,21 @@ void setup() {
   appScreen = loadImage("Background.png");
   play = false;
 
-  // Create shapes
-  shapes[0] = new Shape(100.0, 100.0, color(255, 0, 0), "Square");
-  shapes[1] = new Shape(200.0, 100.0, color(0, 255, 0), "Triangle");
-  shapes[2] = new Shape(300.0, 100.0, color(0, 0, 255), "Circle");
+  //Initializing list for shapes
+  ArrayList<Shape> shapesList = new ArrayList<Shape>();
+
+ 
+  // Create shapes till condition
+  while (shapesList.size() < maxShapes) {
+    float xPos = (width);
+    float yPos = (height);
+
+    //Random shape
+    shapesList.add(new Shape(xPos, yPos, color(random(255), random(255), random(255)), "Random Shape"));
+  }
+
+  //Convert the list to an array
+  shapes = shapesList.toArray(new Shape[0]);
 }
 
 void draw() {
@@ -56,3 +68,5 @@ void mousePressed() {
     play = true;
   }
 }
+
+
