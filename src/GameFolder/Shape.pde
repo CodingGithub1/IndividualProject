@@ -11,22 +11,20 @@ class Shape {
     this.shapeType = shapeType;
   }
 
-  // Draw the shape
-  void draw() {
-    fill(fillColor);
-    if (shapeType.equals("Square")) {
-      rectMode(CENTER);
-      rect(x, y, 50, 50); // Square
-    } else if (shapeType.equals("Triangle")) {
-      triangle(x - 25, y + 20, x + 25, y + 20, x, y - 30); // Triangle
-    } else if (shapeType.equals("Circle")) {
-      ellipseMode(CENTER);
-      ellipse(x, y, 50, 50); // Circle
-    }
+ // Draw the shape
+void draw() {
+  fill(fillColor);
+  if (shapeType.equals("Square")) {
+    rectMode(CENTER);
+    rect(x, y, 50, 50); // Draw a square
+  } else if (shapeType.equals("Triangle")) {
+    // Draw a triangle
+    triangle(x - 25, y + 20, x + 25, y + 20, x, y - 30);
+  } else if (shapeType.equals("Circle")) {
+    ellipseMode(CENTER);
+    ellipse(x, y, 50, 50); // Draw a circle
   }
 }
- 
-
 
 
 
