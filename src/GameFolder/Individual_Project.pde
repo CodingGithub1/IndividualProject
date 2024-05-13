@@ -6,7 +6,7 @@ PImage appScreen;
 int score;
 boolean play;
 // Draw all shapes
-int maxShapes = 10;
+int maxShapes = 50;
 Shape[] shapes; //Declare the shapes array
 
 void setup() {
@@ -15,22 +15,47 @@ void setup() {
   appScreen = loadImage("Background.png");
   play = false;
 
-  //Initializing list for shapes
-  ArrayList<Shape> shapesList = new ArrayList<Shape>();
+  // Define boundaries
+  float boundaryStartX = 120; // Start a little bit right of the left screen
+  float boundaryEndX = width * 0.77;
+  float boundaryStartY = 50;
+  float boundaryEndY = height * 0.73;
+  // Initialize array for shapes
+  shapes = new Shape[maxShapes];
 
- 
-  // Create shapes till condition
-  while (shapesList.size() < maxShapes) {
-    float xPos = (width);
-    float yPos = (height);
+  // Create shapes
+  for (int i = 0; i < maxShapes; i++) {
+    float xPos, yPos;
+    boolean overlapping;
 
-    //Random shape
-    shapesList.add(new Shape(xPos, yPos, color(random(255), random(255), random(255)), "Random Shape"));
+    do {
+      overlapping = false;
+      // Random x position within the defined boundaries
+      xPos = random(boundaryStartX, boundaryEndX );
+      // Random y position within the top boundary
+      yPos = random(boundaryStartY, boundaryEndY);
+
+      // Check for collision with existing shapes
+      for (int j = 0; j < i; j++) {
+        if (dist(xPos, yPos, shapes[j].x, shapes[j].y) < shapes[j].size + 40) {
+          overlapping = true;
+          break;
+        }
+      }
+    } while (overlapping);
+
+    // Randomly choose shape type
+    String[] possibleShapes = {"Square", "Triangle", "Circle"};
+    String randomShape = possibleShapes[int(random(possibleShapes.length))];
+
+    // Randomly generate color
+    color randomColor = color(random(255), random(255), random(255));
+
+    shapes[i] = new Shape(xPos, yPos, randomColor, randomShape, 50);
   }
-
-  //Convert the list to an array
-  shapes = shapesList.toArray(new Shape[0]);
 }
+
+
 
 void draw() {
   if (!play) {
@@ -68,5 +93,3 @@ void mousePressed() {
     play = true;
   }
 }
-
-
